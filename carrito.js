@@ -129,7 +129,7 @@ actualizarCarrito();
    FINALIZAR PEDIDO POR WHATSAPP
    ============================== */
 
-const numeroWhatsApp = "5493364260135";
+const numeroWhatsApp = "5493364249330";
 const botonWhatsApp = document.getElementById("pedirWhatsApp");
 
 botonWhatsApp.addEventListener("click", function() {
