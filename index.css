@@ -1,0 +1,898 @@
+/* ===============================================================================================================================
+   CONFIGURACIÓN GENERAL
+================================================================================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================================================================================================================
+   HEADER
+===================================================================================================*/
+header {
+    width: 100%;
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #000000;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Icono de hamburguesa */
+.burga {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        145deg,
+        #ed4141,
+        #b91f26
+    );
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 25px;
+}
+
+
+
+/* Nombre */
+.compa {
+    color: #f5f1eb;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 40px;
+}
+.compa strong{
+        color: #e63939;
+                    font-size: 40px;
+}
+
+
+/* ================================================================================================================================
+   REDES SOCIALES
+========================================================= */
+.letras {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.letras a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e63939;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+.letras a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* ===================================================================================================================================
+   PRESENTACIÓN / HERO
+========================================================= */
+
+.inicio {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    overflow: hidden;
+    color: #ffffff;
+    background-image: url("Gemini_Generated_Image_9unzhi9unzhi9unz.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* =================================================================================================================================
+   CAPA OSCURA SOBRE LA IMAGEN
+========================================================= */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.12) 50%,
+            rgba(0, 0, 0, 0.28) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
+    z-index: 1;
+}
+
+
+/* =========================================================
+   TEXTO DEL HERO
+========================================================= */
+.inicio-texto {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+========================================================= */
+
+.inicio h1 {
+    color: #ffffff;
+    font-size: clamp(45px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-top: -100px;
+    margin-bottom: 28px;
+    text-shadow: 0 5px 25px rgba(0, 0, 0, 0.85);
+}
+/* Parte roja */
+.inicio h1 strong {
+    color: #e63939;
+    font-weight: 800;
+    text-shadow: 0 3px 20px rgba(230, 57, 57, 0.30);
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.inicio p {
+    color: #f0ece6;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto 38px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.85);
+}
+
+
+/* ===================================================================================================================================
+   BOTONES
+========================================================= */
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.boton {
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 190px;
+    padding: 15px 26px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+======================================================= */
+.boton-principal {
+    background: linear-gradient(
+        135deg,
+        #ed4141,
+        #c5242b
+    );
+    color: #ffffff;
+    border: 1px solid #ed4141;
+    box-shadow: 0 8px 25px rgba(230, 57, 57, 0.30);
+}
+.boton-principal:hover {
+    background: linear-gradient(
+        135deg,
+        #f04b4b,
+        #d62930
+    );
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 57, 57, 0.42);
+}
+
+
+/* =========================================================
+   BOTÓN SECUNDARIO
+========================================================= */
+.boton-secundario {
+    background: rgba(15, 15, 15, 0.45);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.boton-secundario:hover {
+    background: rgba(230, 57, 57, 0.16);
+    border-color: #e63939;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===================================================================================================================================
+   INDICADOR DE SCROLL
+========================================================= */
+.scroll {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    color: #ffffff;
+}
+.scroll span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.scroll i {
+    margin-top: 10px;
+    color: #e63939;
+    font-size: 25px;
+    animation: bajar 1.5s infinite ease-in-out;
+}
+
+
+/* =========================================================
+   ANIMACIÓN DEL SCROLL
+========================================================= */
+@keyframes bajar {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MENÚ GENERAL
+========================================================= */
+.menu {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 70px;
+}
+
+/* =========================================================
+   LO MÁS PEDIDO
+========================================================= */
+.lo-mas-pedido {
+    width: 100%;
+    background-color: #e63939;
+    margin: 20px 0 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pl{
+    margin-top: 80px;
+}
+
+.titu {
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+}
+
+
+
+/* =========================================================
+   TÍTULOS DE CATEGORÍAS
+========================================================= */
+.tp {
+    margin-top: -50px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 800;
+    color: #222;
+}
+
+.subtitulo {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 17px;
+    color: #777;
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   TARJETA DEL PRODUCTO
+======================================================== */
+.producto {
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.10);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    border: 1px solid #eeeeee;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+.producto:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   IMAGEN DEL PRODUCTO
+========================================================= */
+.producto img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Zoom de imagen */
+.producto:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL PRODUCTO
+========================================================= */
+.producto-info {
+    padding: 18px;
+}
+
+/* Nombre */
+.producto-info h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Descripción */
+.producto-info p {
+    min-height: 48px;
+    margin: 0 0 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+}
+
+
+/* Precio */
+.producto-info span {
+    display: block;
+    font-size: 21px;
+    font-weight: 800;
+    color: #d62828;
+}
+
+/* =========================================================
+   SEPARACIÓN ENTRE CATEGORÍAS
+========================================================= */
+.menu + .menu {
+    margin-top: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ESPECIALIDAD
+========================================================= */
+.especialidad {
+    min-height: 450px;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("/imagenes/choripan.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 50px 25px;
+}
+
+
+/* Contenido */
+.especialidad div {
+    max-width: 700px;
+}
+/* Título */
+.especialidad h2 {
+    margin: 0 0 20px;
+    font-size: 60px;
+    font-weight: 800;
+    color: #dddddd;
+}
+.especialidad h2 strong {
+    color: #e63939;
+    font-weight: 800;
+    text-shadow: 0 3px 20px rgba(230, 57, 57, 0.30);
+}
+
+/* Texto */
+.especialidad p {
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+    font-size: 25px;
+    color: #dddddd;
+}
+
+
+
+.especialidad .boto{
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 15px 26px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+
+    background:#ed4141;
+    color: #ffffff;
+    border: 1px solid #ed4141;
+}
+.especialidad .boto:hover {
+    background: #f04b4b,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================================================================================
+   FOOTER
+======================================================== */
+footer {
+    background-color: #080808;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+footer h3 {
+    margin-bottom: 10px;
+    color: #f5f1eb;
+    font-size: 20px;
+}
+footer p {
+    color: #777777;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   RESPONSIVE PARA CELULARES
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 10px;
+
+    }
+
+    .logo {
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .burga {
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+        flex-shrink: 0;
+        justify-content: center;
+    }
+
+    .compa {
+        font-size: 25px;
+        margin: 0;
+    }
+    .compa strong{
+    font-size: 25px;
+    }
+
+    .letras {
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .letras a {
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+    }
+
+
+    /* =========================
+       PRESENTACIÓN PRINCIPAL
+    ========================= */
+
+    .inicio {
+        min-height: 85vh;
+        padding: 40px 15px 100px;
+        background-attachment: scroll;
+    }
+
+    .inicio-texto {
+        width: 100%;
+    }
+
+    .inicio h1 {
+        margin-top: -100px;
+        margin-bottom: 100px;
+        font-size: 60px;
+
+    }
+
+    .inicio p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       BOTONES
+    ========================= */
+
+    .botones {
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+                margin-top: -40px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .boton {
+        width: 100%;
+        min-width: 0;
+        min-height: 55px;
+        margin-top: 10px;
+        padding: 29px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .boton i {
+        font-size: 20px;
+    }
+
+.boton-principal:hover,
+.boton-secundario:hover {
+    transform: translateY(-4px);
+}
+
+
+    /* =========================
+       INDICADOR INFERIOR
+    ========================= */
+
+    .scroll {
+        padding: 0 5px;
+        gap: 5px;
+    }
+
+    .scroll span {
+        margin-top: -120px;
+        font-size: 25px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .scroll i {
+
+    font-size: 35px;
+    animation: bajar 1.5s infinite ease-in-out;
+    }
+
+
+    /* =========================
+       MENÚ Y CATEGORÍAS
+    ========================= */
+
+    .menu {
+        width: 94%;
+        max-width: none;
+        margin: 0 auto 45px;
+    }
+
+    .lo-mas-pedido {
+        margin-top: -30px;
+        margin-bottom: -20px;
+        padding: 15px 8px;
+    }
+
+    .titu {
+        margin: 0;
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .pl {
+        margin-top: 45px;
+    }
+
+    .tp {
+        margin-top: -20px;
+        margin-bottom: 8px;
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .subtitulo {
+        margin-top: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .menu + .menu {
+        margin-top: 45px;
+    }
+
+
+    /* =========================
+       PRODUCTOS
+       3 POR FILA
+    ========================= */
+
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+        height: 220px;
+    }
+
+    .producto {
+        min-width: 0;
+        border-radius: 9px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    }
+
+
+    .producto:hover {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    }
+
+    .producto img {
+        display: block;
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .producto-info {
+        padding: 7px;
+    }
+
+    .producto-info h3 {
+        margin: 0 0 6px;
+        font-size: 12px;
+        line-height: 1.25;
+
+    }
+
+    .producto-info p {
+        min-height: 0;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .producto-info span {
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       ESPECIALIDAD
+    ========================= */
+
+    .especialidad {
+        min-height: 350px;
+        padding: 40px 18px;
+        background-attachment: scroll;
+    }
+
+    .especialidad h2 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .especialidad p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .especialidad .boto {
+        width: auto;
+        max-width: 100%;
+        font-size: 15px;
+        
+        
+    }
+
+
+    /* =========================
+       PIE DE PÁGINA
+    ========================= */
+
+    footer {
+        padding: 30px 15px;
+    }
+
+    footer h3 {
+        font-size: 18px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
