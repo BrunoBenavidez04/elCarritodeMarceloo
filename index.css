@@ -491,7 +491,7 @@ header {
             rgba(0, 0, 0, 0.68),
             rgba(0, 0, 0, 0.78)
         ),
-        url("/imagenes/choripan.jpg");
+        url("choripan.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
