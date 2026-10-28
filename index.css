@@ -472,9 +472,179 @@ header {
 }
 
 
+/* =========================
+   SECCIÓN EVENTOS
+========================= */
 
+.seccion-eventos {
+    background: linear-gradient(145deg, #252525, #383838);
+    padding: 45px 25px;
+    margin: 40px 3%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.20);
+    text-align: center;
+}
 
+/* TÍTULO */
 
+.seccion-eventos .lo-mas-pedido {
+    margin: 0;
+    background: transparent;
+}
+
+.seccion-eventos .titu {
+    color: #fff;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 10px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.seccion-eventos .titu::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin: 18px auto 0;
+    background: #e63939;
+    border-radius: 10px;
+}
+
+/* SUBTÍTULO */
+
+.subtitulo-eventos {
+    color: #d6d6d6;
+    font-size: 16px;
+    margin: 15px 0 28px;
+    letter-spacing: 0.4px;
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carrusel-marcelo {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.carrusel-marcelo .carousel-item img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Zoom suave al cambiar de foto */
+
+.carrusel-marcelo .carousel-item.active img {
+    animation: entradaFoto 0.7s ease;
+}
+
+@keyframes entradaFoto {
+    from {
+        transform: scale(1.035);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* INDICADORES */
+
+.carrusel-marcelo .carousel-indicators {
+    margin-bottom: 18px;
+    gap: 5px;
+}
+
+.carrusel-marcelo .carousel-indicators [data-bs-target] {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+    margin: 0 4px;
+    background-color: #fff;
+    opacity: 0.65;
+    transition: all 0.25s ease;
+}
+
+.carrusel-marcelo .carousel-indicators .active {
+    background-color: #e63939;
+    opacity: 1;
+    transform: scale(1.25);
+}
+
+/* FLECHAS */
+
+.carrusel-marcelo .carousel-control-prev,
+.carrusel-marcelo .carousel-control-next {
+    width: 10%;
+    opacity: 1;
+}
+
+.carrusel-marcelo .carousel-control-prev-icon,
+.carrusel-marcelo .carousel-control-next-icon {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: rgba(230, 57, 57, 0.95);
+    background-size: 45%;
+    border-radius: 50%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.carrusel-marcelo .carousel-control-prev:hover .carousel-control-prev-icon,
+.carrusel-marcelo .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #bd2525;
+    transform: scale(1.1);
+}
+
+/* =========================
+   TEXTO DE CATERING
+========================= */
+
+.texto-eventos {
+    max-width: 850px;
+    margin: 30px auto 0;
+    padding: 25px 30px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+}
+
+.detalle-eventos {
+    display: inline-block;
+    color: #ff5555;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.texto-eventos p {
+    color: #f3f3f3;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* =========================
+   CELULARES
+========================= */
 
 
 
@@ -485,29 +655,35 @@ header {
    ESPECIALIDAD
 ========================================================= */
 .especialidad {
-    min-height: 450px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.68),
             rgba(0, 0, 0, 0.78)
         ),
-        url("choripan.jpg");
+        url("/imagenes/choripan.jpg");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
     color: #ffffff;
     padding: 50px 25px;
 }
-
 
 /* Contenido */
 .especialidad div {
     max-width: 700px;
 }
+
 /* Título */
 .especialidad h2 {
     margin: 0 0 20px;
@@ -515,6 +691,7 @@ header {
     font-weight: 800;
     color: #dddddd;
 }
+
 .especialidad h2 strong {
     color: #e63939;
     font-weight: 800;
@@ -531,29 +708,26 @@ header {
     color: #dddddd;
 }
 
-
-
-.especialidad .boto{
+/* Botón */
+.especialidad .boto {
     text-decoration: none;
     margin-top: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     padding: 15px 26px;
     border-radius: 8px;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.3px;
-
-
-    background:#ed4141;
+    background: #ed4141;
     color: #ffffff;
     border: 1px solid #ed4141;
 }
+
 .especialidad .boto:hover {
-    background: #f04b4b,
+    background: #f04b4b;
 }
 
 
@@ -594,6 +768,50 @@ footer p {
     color: #777777;
     font-size: 12px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -674,7 +892,7 @@ footer p {
     }
 
     .inicio h1 {
-        margin-top: -100px;
+        margin-top: -200px;
         margin-bottom: 100px;
         font-size: 60px;
 
@@ -687,6 +905,7 @@ footer p {
     }
 
 
+
     /* =========================
        BOTONES
     ========================= */
@@ -695,31 +914,22 @@ footer p {
         width: 100%;
         max-width: 240px;
         margin: 0 auto;
-                margin-top: -40px;
-        display: flex;
-        flex-direction: column;
+        margin-top: -40px;
         align-items: stretch;
         gap: 12px;
     }
 
     .boton {
         width: 100%;
-        min-width: 0;
-        min-height: 55px;
-        margin-top: 10px;
         padding: 29px 15px;
-        display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         border-radius: 10px;
-        font-size: 15px;
-        text-align: center;
-        box-sizing: border-box;
     }
 
     .boton i {
-        font-size: 20px;
+        font-size: 35px;
     }
 
 .boton-principal:hover,
@@ -733,12 +943,13 @@ footer p {
     ========================= */
 
     .scroll {
+
         padding: 0 5px;
         gap: 5px;
     }
 
     .scroll span {
-        margin-top: -120px;
+        margin-top: -200px;
         font-size: 25px;
         letter-spacing: 1px;
         text-align: center;
@@ -749,6 +960,7 @@ footer p {
     font-size: 35px;
     animation: bajar 1.5s infinite ease-in-out;
     }
+
 
 
     /* =========================
@@ -848,6 +1060,74 @@ footer p {
     .producto-info span {
         font-size: 13px;
     }
+
+
+
+    .seccion-eventos {
+        padding: 30px 14px;
+        margin: 25px 12px;
+        border-radius: 22px;
+    }
+
+    .seccion-eventos .titu {
+        font-size: 15px;
+        letter-spacing: 0.3px;
+    }
+
+    .subtitulo-eventos {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 13px 5px 22px;
+    }
+
+    .carrusel-marcelo {
+        border-radius: 15px;
+    }
+
+    .carrusel-marcelo .carousel-item img {
+        height: 270px;
+    }
+
+    .carrusel-marcelo .carousel-control-prev,
+    .carrusel-marcelo .carousel-control-next {
+        width: 13%;
+    }
+
+    .carrusel-marcelo .carousel-control-prev-icon,
+    .carrusel-marcelo .carousel-control-next-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .carrusel-marcelo .carousel-indicators {
+        margin-bottom: 12px;
+    }
+
+    .texto-eventos {
+        margin-top: 22px;
+        padding: 20px 16px;
+        border-radius: 15px;
+    }
+
+    .detalle-eventos {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .texto-eventos p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     /* =========================
