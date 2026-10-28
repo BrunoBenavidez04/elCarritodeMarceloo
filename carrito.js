@@ -129,7 +129,7 @@ actualizarCarrito();
    FINALIZAR PEDIDO POR WHATSAPP
    ============================== */
 
-const numeroWhatsApp = "5493364249330";
+const numeroWhatsApp = "5493364260135";
 const botonWhatsApp = document.getElementById("pedirWhatsApp");
 
 botonWhatsApp.addEventListener("click", function() {
@@ -160,3 +160,29 @@ botonWhatsApp.addEventListener("click", function() {
 
     window.open(enlaceWhatsApp, "_blank");
 });
+
+
+
+const botonBajar = document.getElementById("bajarPagina");
+const indiceMenu = document.querySelector(".indice-menu");
+
+function controlarBoton() {
+    const limite = indiceMenu.offsetTop + indiceMenu.offsetHeight;
+
+    if (window.scrollY > limite) {
+        botonBajar.classList.add("visible");
+    } else {
+        botonBajar.classList.remove("visible");
+    }
+}
+
+botonBajar.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+window.addEventListener("scroll", controlarBoton);
+
+controlarBoton();
