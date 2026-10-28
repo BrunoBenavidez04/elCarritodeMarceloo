@@ -770,6 +770,62 @@ POSTRES
     <!-- FONDO OSCURO -->
     <div class="fondo" id="fondo"></div>
 
+
+
+
+
+
+
+<!-- FORMULARIO PARA FINALIZAR EL PEDIDO -->
+<div class="modal-pedido" id="modalPedido">
+
+    <form class="formulario-pedido" id="formularioPedido">
+
+        <button type="button" class="cerrar-formulario" id="cerrarFormulario">
+            &times;
+        </button>
+
+<h2>
+    <i class="fa-solid fa-user"></i>
+    Datos del Usuario
+</h2>
+
+<p>Completá tus datos para continuar por WhatsApp.</p>
+
+        <label for="nombreCliente">Nombre</label>
+        <input type="text" id="nombreCliente" required
+               placeholder="Ingresá tu nombre">
+
+        <label for="apellidoCliente">Apellido</label>
+        <input type="text" id="apellidoCliente" required
+               placeholder="Ingresá tu apellido">
+
+<label for="tipoEntrega">¿Cómo querés recibir tu pedido?</label>
+
+<select id="tipoEntrega" required>
+    <option value="" disabled selected hidden>Seleccioná una opción</option>
+    <option value="Retiro en el local">Retirar en el local</option>
+    <option value="Envío a domicilio">Envío a domicilio</option>
+</select>
+
+        <div id="campoDireccion" class="campo-direccion">
+            <label for="direccionCliente">Dirección de entrega</label>
+            <input type="text" id="direccionCliente"
+                   placeholder="Calle, número y barrio">
+        </div>
+
+        <button type="submit" class="confirmar-pedido">
+            Confirmar y continuar por WhatsApp
+        </button>
+
+    </form>
+
+</div>
+
+
+
+
+                
     <!-- ============================================================================================================
 FOOTER
 ============================================================================================================ -->
