@@ -12,7 +12,52 @@ body {
     background: #f4f4f4;
     color: #222;
 }
+/* BOTÓN FLOTANTE PARA VOLVER A LAS CATEGORÍAS */
 
+.boton-bajar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #e63939;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #e63939;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 850;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.boton-bajar:hover {
+    background: rgba(230, 57, 57, 0.9);
+    color: white;
+    transform: scale(1.08);
+}
+
+.boton-bajar.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+    .boton-bajar {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 18px;
+    }
+}
 
 
 /* =========================
