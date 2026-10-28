@@ -645,6 +645,26 @@ header {
 /* =========================
    CELULARES
 ========================= */
+.boto {
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: #ed4141;
+    color: #ffffff;
+    border: 1px solid #ed4141;
+}
+
+.boto:hover {
+    background: #f04b4b;
+}
 
 
 
