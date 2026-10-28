@@ -129,21 +129,85 @@ actualizarCarrito();
    FINALIZAR PEDIDO POR WHATSAPP
    ============================== */
 
+
+
 const numeroWhatsApp = "5493364249330";
 const botonWhatsApp = document.getElementById("pedirWhatsApp");
+const modalPedido = document.getElementById("modalPedido");
+const formularioPedido = document.getElementById("formularioPedido");
+const cerrarFormulario = document.getElementById("cerrarFormulario");
+const tipoEntrega = document.getElementById("tipoEntrega");
+const campoDireccion = document.getElementById("campoDireccion");
+const direccionCliente = document.getElementById("direccionCliente");
 
-botonWhatsApp.addEventListener("click", function() {
+// ABRIR EL FORMULARIO
+botonWhatsApp.addEventListener("click", function () {
     if (carrito.length === 0) {
         alert("Tu carrito está vacío. Agregá productos antes de continuar.");
         return;
     }
 
+    modalPedido.classList.add("activo");
+});
+
+// MOSTRAR LA DIRECCIÓN SI ELIGE ENVÍO
+tipoEntrega.addEventListener("change", function () {
+    if (tipoEntrega.value === "Envío a domicilio") {
+        campoDireccion.classList.add("visible");
+        direccionCliente.required = true;
+    } else {
+        campoDireccion.classList.remove("visible");
+        direccionCliente.required = false;
+        direccionCliente.value = "";
+    }
+});
+
+// CERRAR EL FORMULARIO
+cerrarFormulario.addEventListener("click", function () {
+    modalPedido.classList.remove("activo");
+});
+
+// CONFIRMAR PEDIDO Y ABRIR WHATSAPP
+formularioPedido.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        modalPedido.classList.remove("activo");
+        return;
+    }
+
+    const nombre = document.getElementById("nombreCliente").value.trim();
+    const apellido = document.getElementById("apellidoCliente").value.trim();
+    const entrega = tipoEntrega.value;
+    const direccion = direccionCliente.value.trim();
+
+    if (!nombre || !apellido || !entrega) {
+        alert("Completá todos los campos obligatorios.");
+        return;
+    }
+
+    if (entrega === "Envío a domicilio" && !direccion) {
+        alert("Ingresá la dirección de entrega.");
+        return;
+    }
+
     let mensaje = "¡Hola! Quiero realizar el siguiente pedido:\n\n";
+
+    mensaje += "DATOS DEL CLIENTE\n";
+    mensaje += "Nombre y apellido: " + nombre + " " + apellido + "\n";
+    mensaje += "Modalidad: " + entrega + "\n";
+
+    if (entrega === "Envío a domicilio") {
+        mensaje += "Dirección: " + direccion + "\n";
+    }
+
+    mensaje += "\nDETALLE DEL PEDIDO\n";
+
     let total = 0;
 
-    carrito.forEach(function(producto) {
+    carrito.forEach(function (producto) {
         const subtotal = producto.precio * producto.cantidad;
-
         total += subtotal;
 
         mensaje += "• " + producto.nombre +
@@ -159,9 +223,11 @@ botonWhatsApp.addEventListener("click", function() {
         "?text=" + encodeURIComponent(mensaje);
 
     window.open(enlaceWhatsApp, "_blank");
+    modalPedido.classList.remove("activo");
 });
 
 
+/* BOTÓN PARA VOLVER ARRIBA */
 
 const botonBajar = document.getElementById("bajarPagina");
 const indiceMenu = document.querySelector(".indice-menu");
@@ -184,5 +250,4 @@ botonBajar.addEventListener("click", function () {
 });
 
 window.addEventListener("scroll", controlarBoton);
-
 controlarBoton();
