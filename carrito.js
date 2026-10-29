@@ -9,9 +9,7 @@ const listaCarrito = document.getElementById("lista-carrito");
 const totalElemento = document.getElementById("total");
 const contador = document.getElementById("contador-carrito");
 const botonVaciar = document.getElementById("vaciarCarrito");
-
 const botonesAgregar = document.querySelectorAll(".agregar");
-
 
 botonesAgregar.forEach(function(boton) {
     boton.addEventListener("click", function() {
@@ -19,10 +17,38 @@ botonesAgregar.forEach(function(boton) {
         const precio = Number(boton.dataset.precio);
 
         agregarProducto(nombre, precio);
-
-        alert("¡Ya agregaste " + nombre + " al carrito!");
+        mostrarMensaje(nombre);
     });
 });
+
+function mostrarMensaje(nombre) {
+    let mensaje = document.getElementById("mensajeAgregado");
+
+    if (!mensaje) {
+        mensaje = document.createElement("div");
+        mensaje.id = "mensajeAgregado";
+        mensaje.className = "mensaje-agregado";
+
+        mensaje.innerHTML = `
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <strong>¡Producto agregado!</strong>
+                <span id="textoMensaje"></span>
+            </div>
+        `;
+
+        document.body.appendChild(mensaje);
+    }
+
+    mensaje.querySelector("#textoMensaje").textContent =
+        nombre + " se agregó al carrito.";
+
+    mensaje.classList.add("visible");
+
+    setTimeout(function() {
+        mensaje.classList.remove("visible");
+    }, 2500);
+}
 
 function agregarProducto(nombre, precio) {
     const productoExistente = carrito.find(function(producto) {
