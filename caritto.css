@@ -940,6 +940,67 @@ footer p {
 
 
 
+/* MENSAJE DE PRODUCTO AGREGADO */
+.mensaje-agregado {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #111;
+    color: #f5f1eb;
+    border-left: 5px solid #e63939;
+    border-radius: 10px;
+    padding: 16px 22px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    pointer-events: none;
+    max-width: calc(100% - 30px);
+}
+
+.mensaje-agregado.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mensaje-agregado i {
+    color: #e63939;
+    font-size: 25px;
+}
+
+.mensaje-agregado strong {
+    color: #fff;
+    display: block;
+    font-size: 15px;
+}
+
+.mensaje-agregado span {
+    color: #ccc;
+    font-size: 13px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 600px) {
+    .mensaje-agregado {
+        top: 95px;
+        right: 15px;
+        left: 15px;
+        padding: 14px 16px;
+    }
+}
+
+
+
+
 
 
 
