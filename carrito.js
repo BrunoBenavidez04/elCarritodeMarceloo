@@ -12,12 +12,15 @@ const botonVaciar = document.getElementById("vaciarCarrito");
 
 const botonesAgregar = document.querySelectorAll(".agregar");
 
+
 botonesAgregar.forEach(function(boton) {
     boton.addEventListener("click", function() {
         const nombre = boton.dataset.nombre;
         const precio = Number(boton.dataset.precio);
 
         agregarProducto(nombre, precio);
+
+        alert("¡Ya agregaste " + nombre + " al carrito!");
     });
 });
 
